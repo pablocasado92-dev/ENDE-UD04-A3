@@ -3,11 +3,32 @@ package figuras;
 import java.util.Scanner;
 import java.awt.Color;
 
+/**
+ * Clase principal para probar las diferentes figuras geométricas.
+ * Permite al usuario crear triángulos, rectángulos y cuadrados,
+ * introduciendo sus dimensiones y calculando su perímetro y área.
+ * 
+ * @version 03-2026
+ * @author Javier Torres
+ * @since 20-03-2026 
+ */
 public class PruebaFigura {
+    /** Constante para el mensaje del área */
     private static final String AREA = "El área es ";
+    
+    /** Constante para el mensaje del perímetro */
     private static final String PERÍMETRO = "El perímetro es ";
+    
+    /** Almacena la opción seleccionada por el usuario en el menú */
     private static int opcion;
 
+    /**
+     * Método principal que ejecuta el programa.
+     * Muestra un menú interactivo y permite al usuario crear diferentes
+     * figuras geométricas hasta que seleccione la opción de salir.
+     * 
+     * @param args Argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
         
         Scanner teclado = new Scanner(System.in);
@@ -40,6 +61,14 @@ public class PruebaFigura {
         teclado.close();
     }
 
+    /**
+     * Procesa la creación de un cuadrado solicitando sus dimensiones al usuario.
+     * 
+     * @param teclado Objeto Scanner para lectura de datos desde el teclado
+     * @param x Coordenada X del centro del cuadrado
+     * @param y Coordenada Y del centro del cuadrado
+     * @return Cuadrado creado con los datos proporcionados por el usuario
+     */
     private static Cuadrado procesarCuadrado(Scanner teclado, double x, double y) {
         System.out.print("Introduzca el lado del cuadrado: ");
         double lado = teclado.nextDouble();
@@ -47,6 +76,14 @@ public class PruebaFigura {
         return c;
     }
 
+    /**
+     * Procesa la creación de un rectángulo solicitando sus dimensiones al usuario.
+     * 
+     * @param teclado Objeto Scanner para lectura de datos desde el teclado
+     * @param x Coordenada X del centro del rectángulo
+     * @param y Coordenada Y del centro del rectángulo
+     * @return Rectángulo creado con los datos proporcionados por el usuario
+     */
     private static Rectangulo procesarRectangulo(Scanner teclado, double x, double y) {
         System.out.print("Introduzca la base del rectángulo: ");
         double base = teclado.nextDouble();
@@ -56,6 +93,15 @@ public class PruebaFigura {
         return r;
     }
 
+    /**
+     * Procesa la creación de un triángulo solicitando sus dimensiones al usuario.
+     * Se solicitan los tres lados del triángulo.
+     * 
+     * @param teclado Objeto Scanner para lectura de datos desde el teclado
+     * @param x Coordenada X del centro del triángulo
+     * @param y Coordenada Y del centro del triángulo
+     * @return Triángulo creado con los datos proporcionados por el usuario
+     */
     private static Triangulo procesarTriangulo(Scanner teclado, double x, double y) {
         System.out.print("Introduzca el lado 1 del triángulo: ");
         double lado1 = teclado.nextDouble();
@@ -67,6 +113,12 @@ public class PruebaFigura {
         return t;
     }
 
+    /**
+     * Muestra el menú principal y solicita al usuario que seleccione una opción.
+     * Valida que la opción esté entre 1 y 4.
+     * 
+     * @return Opción seleccionada por el usuario (1-4)
+     */
     public static int mostrarMenú() {
         int opcion;
         System.out.println("1) Triángulo");
